@@ -1,5 +1,5 @@
-# Venom-Example
-A focused crawler based on venom.
+# Venom-Starter-Pack
+Your preferred focused crawler based on [Venom](https://github.com/PreferredAI/Venom). Now in a convenient git to quickly get your projects up to speed! 
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/ai.preferred/venom/badge.svg)](https://maven-badges.herokuapp.com/maven-central/ai.preferred/venom)
 [![Build Status](https://travis-ci.org/PreferredAI/Venom.svg)](https://travis-ci.org/PreferredAI/Venom)
@@ -22,17 +22,13 @@ Our aim is to create a blazing fast, fully customizable and robust crawler that 
 - Proxy support
 
 ## Getting started
-
+Getting started with Venom is quick and easy. 
 ### Install
-Add dependencies to your pom.xml:
-```xml
-<dependency>
-    <!-- Venom: A focused crawler framework @ https://venom.preferred.ai/ -->
-    <groupId>ai.preferred</groupId>
-    <artifactId>venom</artifactId>
-    <version>[4.0,4.1)</version>
-</dependency>
+Simply clone or fork this repository:
 ```
+git clone https://github.com/PreferredAI/Venom-Starter-Pack.git
+```
+Open it up with your favourite IDE and you are ready to go.
 
 ### Example
 ```java
