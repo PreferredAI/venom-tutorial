@@ -28,7 +28,7 @@ public class ListingHandler implements Handler {
 
   @Override
   public void handle(Request request, VResponse response, Scheduler scheduler, Session session, Worker worker) {
-    LOGGER.info("Processsing {}", request.getUrl());
+    LOGGER.info("Processing {}", request.getUrl());
 
     // Get the job listing array list we created
     final ArrayList<Listing> jobListing = session.get(ListingCrawler.JOB_LIST_KEY);

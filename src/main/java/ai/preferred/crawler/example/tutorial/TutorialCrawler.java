@@ -33,7 +33,7 @@ public class TutorialCrawler {
    */
   public static Crawler createCrawler() {
     // Create the crawler here
-    Crawler crawler = Crawler.buildDefault().start();
+    final Crawler crawler = Crawler.buildDefault().start();
 
     return crawler;
   }
@@ -53,7 +53,7 @@ public class TutorialCrawler {
    */
   public static Fetcher createFetcher() {
     // Create the fetcher here
-    Fetcher fetcher = AsyncFetcher.builder()
+    final Fetcher fetcher = AsyncFetcher.builder()
         .validator(new PipelineValidator(
             EmptyContentValidator.INSTANCE,
             StatusOkValidator.INSTANCE,
@@ -81,7 +81,7 @@ public class TutorialCrawler {
    * @return a new instance of session
    */
   public static Session createSession(List<Paper> papers) {
-    Session session = Session.builder()
+    final Session session = Session.builder()
         .put(PAPER_LIST_KEY, papers)
         .build();
 
@@ -101,7 +101,7 @@ public class TutorialCrawler {
    */
   public static Crawler createCrawler(Fetcher fetcher, Session session) {
     // Create the crawler here
-    Crawler crawler = Crawler.builder()
+    final Crawler crawler = Crawler.builder()
         .fetcher(fetcher)
         .session(session)
         .build()
@@ -120,13 +120,17 @@ public class TutorialCrawler {
    * </p>
    */
   public static void main(String[] args) throws Exception {
-    List<Paper> papers = new ArrayList<>();
+    final List<Paper> papers = new ArrayList<>();
 
+    // try-with block automatically closes the crawler upon completion.
     try (Crawler crawler = createCrawler(createFetcher(), createSession(papers))) {
       Request request = new VRequest("https://preferred.ai/publications/");
       crawler.getScheduler().add(request, new TutorialHandler());
     }
 
-    LOGGER.info("You have crawled {} papers", papers.size());
+    LOGGER.info("You have crawled {} papers.", papers.size());
+    papers.forEach(paper -> {
+      LOGGER.info("Name: {}, Url: {}", paper.getName(), paper.getUrl());
+    });
   }
 }

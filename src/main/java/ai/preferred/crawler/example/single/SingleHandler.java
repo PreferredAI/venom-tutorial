@@ -25,7 +25,7 @@ public class SingleHandler implements Handler {
 
   @Override
   public void handle(Request request, VResponse response, Scheduler scheduler, Session session, Worker worker) {
-    LOGGER.info("Processsing {}", request.getUrl());
+    LOGGER.info("Processing {}", request.getUrl());
 
     // Get content type
     System.out.println(response.getContentType());

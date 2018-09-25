@@ -41,6 +41,8 @@ public class TutorialValidator implements Validator {
   @Override
   public Status isValid(Request request, Response response) {
     final VResponse vResponse = new VResponse(response);
+
+    // Some vars you may need
     final String html = vResponse.getHtml();
     final Document document = vResponse.getJsoup();
 

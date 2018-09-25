@@ -10,10 +10,14 @@ import ai.preferred.venom.response.VResponse;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class TutorialHandler implements Handler {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(TutorialHandler.class);
 
   /**
    * Exercise 6: Parsing the response from the crawl.
@@ -34,6 +38,8 @@ public class TutorialHandler implements Handler {
    */
   @Override
   public void handle(Request request, VResponse response, Scheduler scheduler, Session session, Worker worker) {
+    // Log when there's activity
+    LOGGER.info("Processing {}", request.getUrl());
 
     // The array list to put your results
     final List<Paper> papers = session.get(TutorialCrawler.PAPER_LIST_KEY);
