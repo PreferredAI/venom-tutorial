@@ -42,6 +42,12 @@ so you do not have to worry about not knowing whether your code works.
 
 ### Test Suite
 Easily find out what went wrong by running the tests included with the exercises.
+
+You can run this command in the project folder
+```
+mvn test
+```
+Or use your IDE to run JUnit tests
 ![Test Suite](https://venom.preferred.ai/assets/Test-Suite-min259.PNG "Test Suite")
 
 ## License
