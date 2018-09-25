@@ -23,7 +23,7 @@ Venom-Starter-Pack includes a set of tutorial designed to quickly get you from 0
 
 There are 7 exercises located in the package ai.preferred.crawler.example.tutorial. 
 Alongside the exercises are a set of test suite that automatically checks your code and provide hints on errors, 
-so you do not have to worry about not know whether your code works as expected.
+so you do not have to worry about not knowing whether your code works.
 
 #### TutorialCrawler.java
 - Exercise 1: Creating a crawler with default settings.
@@ -32,13 +32,17 @@ so you do not have to worry about not know whether your code works as expected.
 - Exercise 4: Creating a crawler that uses a specified fetcher and session.
 
 #### TutorialValidator.java
-- Exercise 5: Creating a validator that validate the page
+- Exercise 5: Creating a validator that validate a page.
 
 #### TutorialHandler.java
 - Exercise 6: Parsing the response from the crawl.
 
 #### TutorialCrawler.java
 - Exercise 7: Putting it all together.
+
+### Test Suite
+Easily find out what went wrong by running the tests included with the exercises.
+![Test Suite](https://venom.preferred.ai/assets/Test-Suite-min259.PNG "Test Suite")
 
 ## License
 
