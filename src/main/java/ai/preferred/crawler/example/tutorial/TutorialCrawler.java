@@ -89,12 +89,12 @@ public class TutorialCrawler {
   }
 
   /**
-   * Exercise 4: Creating a crawler that uses a specified fetcher.
+   * Exercise 4: Creating a crawler that uses a specified fetcher and session.
    * <p>
    * The crawler class is the "brain" behind the fetcher. It
    * checks the queue and tells the fetcher what to crawl, and
-   * where should the response be processed. To use the fetcher
-   * you created you should put it into crawler's builder.
+   * where should the response be processed. To use the fetcher and
+   * session you created you should put it into crawler's builder.
    * </p>
    *
    * @return a new instance of fetcher
