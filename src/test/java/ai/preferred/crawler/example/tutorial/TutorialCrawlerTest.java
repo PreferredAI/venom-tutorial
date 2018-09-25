@@ -88,7 +88,7 @@ public class TutorialCrawlerTest {
   }
 
   @Test
-  public void testCreateCrawlerWithFetcher() throws Exception {
+  public void testCreateCrawlerWithFetcherAndSession() throws Exception {
     final AsyncFetcher fetcher = AsyncFetcher.buildDefault();
     final Session session = Session.EMPTY_SESSION;
 

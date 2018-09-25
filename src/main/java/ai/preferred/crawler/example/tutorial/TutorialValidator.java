@@ -40,6 +40,9 @@ public class TutorialValidator implements Validator {
    */
   @Override
   public Status isValid(Request request, Response response) {
+    // Log when there's activity
+    LOGGER.info("Validating {}", request.getUrl());
+
     final VResponse vResponse = new VResponse(response);
 
     // Some vars you may need
