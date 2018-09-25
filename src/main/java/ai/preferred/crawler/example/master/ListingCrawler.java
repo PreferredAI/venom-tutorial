@@ -38,9 +38,8 @@ public class ListingCrawler {
         .build();
 
     // Start crawler
-    try (Crawler crawler = crawler(fetcher(), session)) {
+    try (Crawler crawler = crawler(fetcher(), session).start()) {
       LOGGER.info("Starting crawler...");
-      crawler.start();
 
       final String startUrl = "https://stackoverflow.com/jobs?l=Singapore&d=20&u=Km";
 

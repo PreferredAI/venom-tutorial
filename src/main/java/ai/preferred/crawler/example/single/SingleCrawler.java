@@ -25,8 +25,7 @@ public class SingleCrawler {
 
   public static void main(String[] args) {
 
-    try (Crawler crawler = crawler(httpFetcher())) {
-      crawler.start();
+    try (Crawler crawler = crawler(httpFetcher()).start()) {
       LOGGER.info("Starting crawler...");
 
       // pass in URL and handler
