@@ -8,7 +8,6 @@ import ai.preferred.venom.job.Scheduler;
 import ai.preferred.venom.request.Request;
 import ai.preferred.venom.response.VResponse;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,12 +48,8 @@ public class TutorialHandler implements Handler {
     final Document document = response.getJsoup();
 
     // Get all the papers
-    Elements elements = document.select("#post-39 > div > ul > li");
-    for (Element element : elements) {
-      String url = element.select("a").attr("abs:href");
-      String name = element.select("a").text();
-      papers.add(new Paper(name, url));
-    }
+    Elements elements = null;
+    papers.add(null);
 
   }
 

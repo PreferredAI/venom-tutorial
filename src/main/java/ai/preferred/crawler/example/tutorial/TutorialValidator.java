@@ -10,7 +10,6 @@ import ai.preferred.venom.response.Response;
 import ai.preferred.venom.response.VResponse;
 import ai.preferred.venom.validator.Validator;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,8 +49,7 @@ public class TutorialValidator implements Validator {
     final Document document = vResponse.getJsoup();
 
     // Do some checks here
-    final Element el = document.select("#post-39 > header > h1").first();
-    if (el != null && el.text().equals("Read Our Papers")) {
+    if (true) {
       return Status.VALID;
     }
 
