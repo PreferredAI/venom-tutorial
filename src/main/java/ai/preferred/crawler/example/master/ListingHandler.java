@@ -5,6 +5,7 @@
  */
 package ai.preferred.crawler.example.master;
 
+import ai.preferred.crawler.example.EntityCSVStorage;
 import ai.preferred.crawler.example.entity.Listing;
 import ai.preferred.venom.Handler;
 import ai.preferred.venom.Session;
@@ -33,10 +34,13 @@ public class ListingHandler implements Handler {
     // Get the job listing array list we created
     final ArrayList<Listing> jobListing = session.get(ListingCrawler.JOB_LIST_KEY);
 
+    // Get the job listing array list we created
+    final EntityCSVStorage csvStorage = session.get(ListingCrawler.CSV_STORAGE_KEY);
+
     // Get HTML
     final String html = response.getHtml();
 
-    // JSOUP
+    // JSoup
     final Document document = response.getJsoup();
 
     // We will use a parser class
@@ -46,11 +50,16 @@ public class ListingHandler implements Handler {
 
       // Add to the array list
       jobListing.add(listing);
+
+      // Write record in CSV
+      csvStorage.append(listing);
     });
 
     // Crawl another page if there's a next page
     if (finalResult.getNextPage() != null) {
       final String nextPageURL = finalResult.getNextPage();
+
+      // Schedule the next page
       scheduler.add(new VRequest(nextPageURL), this);
     }
 

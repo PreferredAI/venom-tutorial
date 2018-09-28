@@ -63,7 +63,7 @@ public class TutorialCrawlerTest {
 
     final Field field2 = pipelineValidator.getClass().getDeclaredField("validators");
     field2.setAccessible(true);
-    final List<Validator> validators = (List<Validator>) field2.get(pipelineValidator);
+    @SuppressWarnings("unchecked") final List<Validator> validators = (List<Validator>) field2.get(pipelineValidator);
 
     Assertions.assertEquals(validators.size(), 3, "Incorrect number of validators found!");
 

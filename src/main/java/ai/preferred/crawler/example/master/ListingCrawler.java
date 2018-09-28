@@ -5,6 +5,7 @@
  */
 package ai.preferred.crawler.example.master;
 
+import ai.preferred.crawler.example.EntityCSVStorage;
 import ai.preferred.crawler.example.entity.Listing;
 import ai.preferred.venom.Crawler;
 import ai.preferred.venom.Session;
@@ -29,28 +30,41 @@ public class ListingCrawler {
   // Create session keys for things you would like to retrieve from handler
   static final Session.Key<ArrayList<Listing>> JOB_LIST_KEY = new Session.Key<>();
 
+  // Create session keys for CSV printer to print from handler
+  static final Session.Key<EntityCSVStorage> CSV_STORAGE_KEY = new Session.Key<>();
+
   public static void main(String[] args) {
 
-    // Let's init the session, this allows us to retrieve the array list in the handler
-    final ArrayList<Listing> jobListing = new ArrayList<>();
-    final Session session = Session.builder()
-        .put(JOB_LIST_KEY, jobListing)
-        .build();
+    // Get project directory
+    String workingDir = System.getProperty("user.dir");
 
-    // Start crawler
-    try (Crawler crawler = crawler(fetcher(), session).start()) {
-      LOGGER.info("Starting crawler...");
+    // Start CSV printer
+    try (final EntityCSVStorage printer = new EntityCSVStorage(workingDir + "/results.csv")) {
 
-      final String startUrl = "https://stackoverflow.com/jobs?l=Singapore&d=20&u=Km";
+      // Let's init the session, this allows us to retrieve the array list in the handler
+      final ArrayList<Listing> jobListing = new ArrayList<>();
+      final Session session = Session.builder()
+          .put(JOB_LIST_KEY, jobListing)
+          .put(CSV_STORAGE_KEY, printer)
+          .build();
 
-      // pass in URL and handler or use a HandlerRouter
-      crawler.getScheduler().add(new VRequest(startUrl), new ListingHandler());
+      // Start crawler
+      try (final Crawler crawler = crawler(fetcher(), session).start()) {
+        LOGGER.info("Starting crawler...");
+
+        final String startUrl = "https://stackoverflow.com/jobs?l=Singapore&d=20&u=Km";
+
+        // pass in URL and handler or use a HandlerRouter
+        crawler.getScheduler().add(new VRequest(startUrl), new ListingHandler());
+      }
+
+      // We will retrieve all the listing here
+      LOGGER.info("We have found {} listings!", jobListing.size());
+
     } catch (Exception e) {
       LOGGER.error("Could not run crawler: ", e);
     }
 
-    // We will retrieve all the listing here
-    LOGGER.info("We have found {} listings!", jobListing.size());
   }
 
 

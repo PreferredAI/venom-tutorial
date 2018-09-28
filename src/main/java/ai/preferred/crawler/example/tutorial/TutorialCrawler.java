@@ -110,8 +110,6 @@ public class TutorialCrawler {
     }
 
     LOGGER.info("You have crawled {} papers.", papers.size());
-    papers.forEach(paper -> {
-      LOGGER.info("Name: {}, Url: {}", paper.getName(), paper.getUrl());
-    });
+    papers.forEach(paper -> LOGGER.info("Name: {}, Url: {}", paper.getName(), paper.getUrl()));
   }
 }
