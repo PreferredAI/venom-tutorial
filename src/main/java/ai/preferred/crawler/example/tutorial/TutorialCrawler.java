@@ -3,7 +3,13 @@ package ai.preferred.crawler.example.tutorial;
 import ai.preferred.crawler.example.entity.Paper;
 import ai.preferred.venom.Crawler;
 import ai.preferred.venom.Session;
+import ai.preferred.venom.fetcher.AsyncFetcher;
 import ai.preferred.venom.fetcher.Fetcher;
+import ai.preferred.venom.request.Request;
+import ai.preferred.venom.request.VRequest;
+import ai.preferred.venom.validator.EmptyContentValidator;
+import ai.preferred.venom.validator.PipelineValidator;
+import ai.preferred.venom.validator.StatusOkValidator;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
@@ -27,7 +33,7 @@ public class TutorialCrawler {
    */
   public static Crawler createCrawler() {
     // Create the crawler here
-    final Crawler crawler = null;
+    final Crawler crawler = Crawler.buildDefault().start();
 
     return crawler;
   }
@@ -47,7 +53,13 @@ public class TutorialCrawler {
    */
   public static Fetcher createFetcher() {
     // Create the fetcher here
-    final Fetcher fetcher = null;
+    final Fetcher fetcher = AsyncFetcher.builder()
+        .validator(new PipelineValidator(
+            EmptyContentValidator.INSTANCE,
+            StatusOkValidator.INSTANCE,
+            new TutorialValidator()
+        ))
+        .build();
 
     return fetcher;
   }
@@ -69,7 +81,10 @@ public class TutorialCrawler {
    * @return a new instance of session
    */
   public static Session createSession(List<Paper> papers) {
-    final Session session = null;
+    final Session session = Session.builder()
+        .put(PAPER_LIST_KEY, papers)
+        .build();
+
 
     return session;
   }
@@ -87,7 +102,11 @@ public class TutorialCrawler {
    */
   public static Crawler createCrawler(Fetcher fetcher, Session session) {
     // Create the crawler here
-    final Crawler crawler = null;
+    final Crawler crawler = Crawler.builder()
+        .fetcher(fetcher)
+        .session(session)
+        .build()
+        .start();
 
     return crawler;
   }
@@ -105,8 +124,9 @@ public class TutorialCrawler {
     final List<Paper> papers = new ArrayList<>();
 
     // try-with block automatically closes the crawler upon completion.
-    try (Crawler crawler = null) {
-
+    try (Crawler crawler = createCrawler(createFetcher(), createSession(papers))) {
+      final Request request = new VRequest("https://preferred.ai/publications/");
+      crawler.getScheduler().add(request, new TutorialHandler());
     }
 
     LOGGER.info("You have crawled {} papers.", papers.size());
