@@ -34,9 +34,9 @@ public class TutorialCrawler {
 
   /**
    * Exercise 2: Creating a fetcher that includes these (3) validators:
-   * - empty content validator,
-   * - status ok validator,
-   * - tutorial validator.
+   * - EmptyContentValidator,
+   * - StatusOkValidator,
+   * - TutorialValidator.
    * <p>
    * The fetcher class is like a internet browser, it allows
    * you to fetch a page given a request (URL). You can also constrain
@@ -105,7 +105,7 @@ public class TutorialCrawler {
     final List<Paper> papers = new ArrayList<>();
 
     // try-with block automatically closes the crawler upon completion.
-    try (Crawler crawler = null) {
+    try (final Crawler crawler = null) {
 
     }
 

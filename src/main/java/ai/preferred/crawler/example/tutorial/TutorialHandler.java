@@ -48,7 +48,7 @@ public class TutorialHandler implements Handler {
     final Document document = response.getJsoup();
 
     // Get all the papers
-    Elements elements = null;
+    final Elements elements = null;
     papers.add(null);
 
   }
