@@ -44,7 +44,7 @@ public class TutorialHandlerTest {
   }
 
   @Test
-  public void testHandler() throws IOException {
+  public void testExerciseSixHandler() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - Sep 2018.html.gz";
 
     final InputStream stream = getClass().getClassLoader().getResourceAsStream(page);
