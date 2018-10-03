@@ -31,7 +31,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testValidateAbout() throws IOException {
+  public void testExerciseFiveValidateAbout() throws IOException {
     final String page = "About – Preferred.AI.html.gz";
 
     final int statusCode = 200;
@@ -47,7 +47,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testValidateContactUs() throws IOException {
+  public void testExerciseFiveValidateContactUs() throws IOException {
     final String page = "Contact Us – Preferred.AI.html.gz";
 
     final int statusCode = 200;
@@ -63,7 +63,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testValidateOurProjects() throws IOException {
+  public void testExerciseFiveValidateOurProjects() throws IOException {
     final String page = "Get to Know Our Projects – Preferred.AI.html.gz";
 
     final int statusCode = 200;
@@ -79,7 +79,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testValidateOurPapersDec2017() throws IOException {
+  public void testExerciseFiveValidateOurPapersDec2017() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - Dec 2017.html.gz";
 
     final int statusCode = 200;
@@ -95,7 +95,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testValidateOurPapersJan2017() throws IOException {
+  public void testExerciseFiveValidateOurPapersJan2017() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - Jan 2017.html.gz";
 
     final int statusCode = 200;
@@ -111,7 +111,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testValidateOurPapersJul2018() throws IOException {
+  public void testExerciseFiveValidateOurPapersJul2018() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - July 2018.html.gz";
 
     final int statusCode = 200;
@@ -127,7 +127,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testValidateOurPapersSep2018() throws IOException {
+  public void testExerciseFiveValidateOurPapersSep2018() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - Sep 2018.html.gz";
 
     final int statusCode = 200;
