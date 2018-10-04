@@ -51,8 +51,9 @@ public class TutorialHandler implements Handler {
     // Get all the papers
     final Elements elements = document.select("#post-39 > div > ul > li");
     for (Element element : elements) {
-      final String url = element.select("a").attr("abs:href");
-      final String name = element.select("a").text();
+      final Element aElement = element.select("a").first();
+      final String url = aElement.attr("abs:href");
+      final String name = aElement.select("a").text();
       papers.add(new Paper(name, url));
     }
 
