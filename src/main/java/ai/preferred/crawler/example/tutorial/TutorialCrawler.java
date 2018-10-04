@@ -8,7 +8,6 @@ import ai.preferred.venom.fetcher.Fetcher;
 import ai.preferred.venom.request.Request;
 import ai.preferred.venom.request.VRequest;
 import ai.preferred.venom.validator.EmptyContentValidator;
-import ai.preferred.venom.validator.PipelineValidator;
 import ai.preferred.venom.validator.StatusOkValidator;
 import org.slf4j.LoggerFactory;
 
@@ -54,11 +53,10 @@ public class TutorialCrawler {
   public static Fetcher createFetcher() {
     // Create the fetcher here
     final Fetcher fetcher = AsyncFetcher.builder()
-        .validator(new PipelineValidator(
+        .validator(
             EmptyContentValidator.INSTANCE,
             StatusOkValidator.INSTANCE,
-            new TutorialValidator()
-        ))
+            new TutorialValidator())
         .build();
 
     return fetcher;
