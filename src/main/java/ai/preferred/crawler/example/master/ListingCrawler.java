@@ -13,7 +13,6 @@ import ai.preferred.venom.fetcher.AsyncFetcher;
 import ai.preferred.venom.fetcher.Fetcher;
 import ai.preferred.venom.request.VRequest;
 import ai.preferred.venom.validator.EmptyContentValidator;
-import ai.preferred.venom.validator.PipelineValidator;
 import ai.preferred.venom.validator.StatusOkValidator;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +30,7 @@ public class ListingCrawler {
   static final Session.Key<ArrayList<Listing>> JOB_LIST_KEY = new Session.Key<>();
 
   // Create session keys for CSV printer to print from handler
-  static final Session.Key<EntityCSVStorage> CSV_STORAGE_KEY = new Session.Key<>();
+  static final Session.Key<EntityCSVStorage<Listing>> CSV_STORAGE_KEY = new Session.Key<>();
 
   public static void main(String[] args) {
 
@@ -39,7 +38,8 @@ public class ListingCrawler {
     String workingDir = System.getProperty("user.dir");
 
     // Start CSV printer
-    try (final EntityCSVStorage printer = new EntityCSVStorage(workingDir + "/results.csv")) {
+    try (final EntityCSVStorage<Listing> printer = new EntityCSVStorage<>(
+        workingDir + "/results.csv", Listing.class)) {
 
       // Let's init the session, this allows us to retrieve the array list in the handler
       final ArrayList<Listing> jobListing = new ArrayList<>();
@@ -71,10 +71,10 @@ public class ListingCrawler {
   private static Fetcher fetcher() {
     // You can look in builder the different things you can add
     return AsyncFetcher.builder()
-        .validator(new PipelineValidator(
+        .validator(
             EmptyContentValidator.INSTANCE,
             StatusOkValidator.INSTANCE,
-            new ListingValidator()))
+            new ListingValidator())
         .build();
   }
 

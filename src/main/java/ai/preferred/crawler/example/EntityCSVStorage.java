@@ -1,6 +1,5 @@
 package ai.preferred.crawler.example;
 
-import ai.preferred.crawler.example.entity.Listing;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.slf4j.Logger;
@@ -12,15 +11,15 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EntityCSVStorage implements AutoCloseable {
+public class EntityCSVStorage<T> implements AutoCloseable {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(EntityCSVStorage.class);
 
   private final CSVPrinter printer;
 
-  public EntityCSVStorage(String file) throws IOException {
+  public EntityCSVStorage(String file, Class<T> clazz) throws IOException {
     printer = new CSVPrinter(new FileWriter(file), CSVFormat.EXCEL);
-    printer.printRecord(getHeaderList(Listing.class));
+    printer.printRecord(getHeaderList(clazz));
   }
 
   private static List<String> getHeaderList(Class clazz) {
@@ -41,9 +40,9 @@ public class EntityCSVStorage implements AutoCloseable {
     return result;
   }
 
-  public synchronized boolean append(Listing listing) {
+  public synchronized boolean append(T object) {
     try {
-      printer.printRecord(toList(listing));
+      printer.printRecord(toList(object));
       printer.flush();
     } catch (IOException | IllegalAccessException e) {
       LOGGER.error("unable to store property: ", e);
