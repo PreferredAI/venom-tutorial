@@ -35,8 +35,9 @@ public class TutorialHandlerTest {
 
     final Elements elements = document.select("#post-39 > div > ul > li");
     for (Element element : elements) {
-      final String url = element.select("a").attr("abs:href");
-      final String name = element.select("a").text().trim();
+      final Element aEl = element.selectFirst("a");
+      final String url = aEl.attr("abs:href");
+      final String name = aEl.text().trim();
       papers.put(url, name);
     }
 
