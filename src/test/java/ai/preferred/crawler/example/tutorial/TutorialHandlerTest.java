@@ -82,7 +82,7 @@ public class TutorialHandlerTest {
     for (Paper paper : papers) {
       final String paperUrl = paper.getUrl();
       Assertions.assertTrue(papersTest.containsKey(paperUrl),
-          "Not such paper URL found! Are you sure '" + paper.getUrl() + "' is a url?");
+          "No such paper URL! Are you sure '" + paper.getUrl() + "' is a full url? (Try it on your browser)");
 
       final String name = papersTest.get(paperUrl);
       Assertions.assertEquals(name, paper.getName().trim(),
@@ -92,7 +92,7 @@ public class TutorialHandlerTest {
       urls.add(paperUrl);
     }
 
-    Assertions.assertEquals(papersTest.size(), urls.size(), "Not all the papers are found! Did you select duplicates?");
+    Assertions.assertEquals(papersTest.size(), urls.size(), "Not all the papers are found! There might be duplicates.");
   }
 
 }
