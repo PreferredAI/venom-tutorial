@@ -31,7 +31,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testExerciseFiveValidateAbout() throws IOException {
+  public void testEx05ValidateAbout() throws IOException {
     final String page = "About – Preferred.AI.html.gz";
 
     final int statusCode = 200;
@@ -47,7 +47,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testExerciseFiveValidateContactUs() throws IOException {
+  public void testEx05ValidateContactUs() throws IOException {
     final String page = "Contact Us – Preferred.AI.html.gz";
 
     final int statusCode = 200;
@@ -63,7 +63,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testExerciseFiveValidateOurProjects() throws IOException {
+  public void testEx05ValidateOurProjects() throws IOException {
     final String page = "Get to Know Our Projects – Preferred.AI.html.gz";
 
     final int statusCode = 200;
@@ -79,7 +79,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testExerciseFiveValidateOurPapersDec2017() throws IOException {
+  public void testEx05ValidateOurPapersDec2017() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - Dec 2017.html.gz";
 
     final int statusCode = 200;
@@ -95,7 +95,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testExerciseFiveValidateOurPapersJan2017() throws IOException {
+  public void testEx05ValidateOurPapersJan2017() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - Jan 2017.html.gz";
 
     final int statusCode = 200;
@@ -111,7 +111,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testExerciseFiveValidateOurPapersJul2018() throws IOException {
+  public void testEx05ValidateOurPapersJul2018() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - July 2018.html.gz";
 
     final int statusCode = 200;
@@ -127,7 +127,7 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testExerciseFiveValidateOurPapersSep2018() throws IOException {
+  public void testEx05ValidateOurPapersSep2018() throws IOException {
     final String page = "Read Our Papers – Preferred.AI - Sep 2018.html.gz";
 
     final int statusCode = 200;
