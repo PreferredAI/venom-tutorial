@@ -19,7 +19,7 @@ import java.util.List;
 public class TutorialCrawlerTest {
 
   @Test
-  public void testExerciseOneCreateCrawler() throws Exception {
+  public void testEx01CreateCrawler() throws Exception {
     final Crawler crawler = TutorialCrawler.createCrawler();
 
     Assertions.assertNotNull(crawler, "Crawler class not found! Did you create a crawler?");
@@ -34,7 +34,7 @@ public class TutorialCrawlerTest {
   }
 
   @Test
-  public void testExerciseThreeCreateSession() {
+  public void testEx03CreateSession() {
     final List<Paper> papers = new ArrayList<>();
     final Session session = TutorialCrawler.createSession(papers);
     final List<Paper> papersReturned = session.get(TutorialCrawler.PAPER_LIST_KEY);
@@ -43,7 +43,7 @@ public class TutorialCrawlerTest {
   }
 
   @Test
-  public void testExerciseTwoCreateFetcher() throws Exception {
+  public void testEx02CreateFetcher() throws Exception {
     final Fetcher fetcher = TutorialCrawler.createFetcher();
 
     Assertions.assertNotNull(fetcher, "Fetcher class not found! Did you create a fetcher?");
@@ -88,7 +88,7 @@ public class TutorialCrawlerTest {
   }
 
   @Test
-  public void testExerciseFourCreateCrawlerWithFetcherAndSession() throws Exception {
+  public void testEx04CreateCrawlerWithFetcherAndSession() throws Exception {
     final AsyncFetcher fetcher = AsyncFetcher.buildDefault();
     final Session session = Session.EMPTY_SESSION;
 
