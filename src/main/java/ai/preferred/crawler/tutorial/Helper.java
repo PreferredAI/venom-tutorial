@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ai.preferred.crawler.example;
+package ai.preferred.crawler.tutorial;
 
 /**
  * @author Ween Jiann Lee

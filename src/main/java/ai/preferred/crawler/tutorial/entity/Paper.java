@@ -1,4 +1,4 @@
-package ai.preferred.crawler.example.entity;
+package ai.preferred.crawler.tutorial.entity;
 
 public class Paper {
 
