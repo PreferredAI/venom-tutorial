@@ -1,4 +1,4 @@
-package ai.preferred.crawler.example;
+package ai.preferred.crawler.tutorial;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

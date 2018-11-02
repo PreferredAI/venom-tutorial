@@ -1,5 +1,6 @@
-package ai.preferred.crawler.example.tutorial;
+package ai.preferred.crawler.tutorial.master;
 
+import ai.preferred.crawler.tutorial.master.TutorialValidator;
 import ai.preferred.venom.request.Request;
 import ai.preferred.venom.request.VRequest;
 import ai.preferred.venom.response.BaseResponse;
