@@ -19,7 +19,7 @@ Check out our main [Venom](https://github.com/PreferredAI/Venom) page for more i
 [PreferredAI](https://preferred.ai/)
 
 ## Tutorial
-Venom-Starter-Pack includes a set of tutorial designed to quickly get you from 0 to 100.
+venom-tutorial includes a set of tutorial designed to quickly get you from 0 to 100.
 
 There are 7 exercises located in the package ai.preferred.crawler.example.tutorial. 
 Alongside the exercises are a set of test suite that automatically checks your code and provide hints on errors, 
