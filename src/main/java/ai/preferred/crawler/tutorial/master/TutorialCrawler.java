@@ -62,8 +62,8 @@ public class TutorialCrawler {
    * your main method and your handler. As our crawler runs asynchronously,
    * you will not be able to directly pass parameters to or directly
    * return objects from the handler. To overcome this, we will use a session
-   * store. We have already created the session key above, your task will be
-   * to insert this key into a session.
+   * store. We have already created the session key above {@see PAPER_LIST_KEY},
+   * your task will be to insert this key into a session.
    * </p>
    *
    * @return a new instance of session
