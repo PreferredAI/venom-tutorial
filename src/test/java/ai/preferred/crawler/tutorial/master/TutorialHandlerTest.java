@@ -75,7 +75,7 @@ public class TutorialHandlerTest {
     final VResponse vResponse = new VResponse(response);
     final Map<String, String> papersTest = getPapers(vResponse.getJsoup());
 
-    new TutorialHandler().handle(request, response, scheduler, session, worker);
+    new TutorialHandler().handle(request, vResponse, scheduler, session, worker);
 
     Assertions.assertTrue(papers.size() >= papersTest.size(),
         "Not all the papers are found! Did you pick the right selector?");

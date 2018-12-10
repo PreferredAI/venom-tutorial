@@ -48,8 +48,8 @@ public class TutorialValidatorTest {
   }
 
   @Test
-  public void testEx05ValidateContactUs() throws IOException {
-    final String page = "Contact Us – Preferred.AI.html.gz";
+  public void testEx05ValidateJoinUs() throws IOException {
+    final String page = "Join Us – Preferred.AI.html.gz";
 
     final int statusCode = 200;
     final String url = "https://preferred.ai/";
