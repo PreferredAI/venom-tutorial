@@ -49,7 +49,7 @@ public class TutorialHandlerTest {
 
   @Test
   public void testEx06Handler() throws IOException {
-    final String page = "Read Our Papers – Preferred.AI - 201810.html.gz";
+    final String page = "Read Our Papers – Preferred.AI.html.gz";
 
     final InputStream stream = getClass().getClassLoader().getResourceAsStream(page);
     Assertions.assertNotNull(stream);
