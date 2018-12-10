@@ -35,7 +35,8 @@ public class TutorialHandlerTest {
   private Map<String, String> getPapers(Document document) {
     final Map<String, String> papers = new HashMap<>();
 
-    final Elements elements = document.select("#post-39 > div > ul > li");
+    final Elements elements = document.select(
+        "#page > div > div > div > div.content > div > article > div > ul > li");
     for (Element element : elements) {
       final Element aEl = element.selectFirst("a");
       final String url = aEl.attr("abs:href");
@@ -48,7 +49,7 @@ public class TutorialHandlerTest {
 
   @Test
   public void testEx06Handler() throws IOException {
-    final String page = "Read Our Papers – Preferred.AI - Sep 2018.html.gz";
+    final String page = "Read Our Papers – Preferred.AI - 201810.html.gz";
 
     final InputStream stream = getClass().getClassLoader().getResourceAsStream(page);
     Assertions.assertNotNull(stream);
