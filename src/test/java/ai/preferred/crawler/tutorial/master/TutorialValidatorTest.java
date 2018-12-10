@@ -81,7 +81,7 @@ public class TutorialValidatorTest {
 
   @Test
   public void testEx05ValidateOurPapersDec2017() throws IOException {
-    final String page = "Read Our Papers – Preferred.AI - Dec 2017.html.gz";
+    final String page = "Read Our Papers – Preferred.AI - 201712.html.gz";
 
     final int statusCode = 200;
     final String url = "https://preferred.ai/";
@@ -97,7 +97,7 @@ public class TutorialValidatorTest {
 
   @Test
   public void testEx05ValidateOurPapersJan2017() throws IOException {
-    final String page = "Read Our Papers – Preferred.AI - Jan 2017.html.gz";
+    final String page = "Read Our Papers – Preferred.AI - 201701.html.gz";
 
     final int statusCode = 200;
     final String url = "https://preferred.ai/";
@@ -113,7 +113,7 @@ public class TutorialValidatorTest {
 
   @Test
   public void testEx05ValidateOurPapersJul2018() throws IOException {
-    final String page = "Read Our Papers – Preferred.AI - July 2018.html.gz";
+    final String page = "Read Our Papers – Preferred.AI - 201807.html.gz";
 
     final int statusCode = 200;
     final String url = "https://preferred.ai/";
@@ -129,7 +129,7 @@ public class TutorialValidatorTest {
 
   @Test
   public void testEx05ValidateOurPapersSep2018() throws IOException {
-    final String page = "Read Our Papers – Preferred.AI - Sep 2018.html.gz";
+    final String page = "Read Our Papers – Preferred.AI - 201810.html.gz";
 
     final int statusCode = 200;
     final String url = "https://preferred.ai/";
