@@ -48,7 +48,7 @@ You can run this command in the project folder
 mvn test
 ```
 Or use your IDE to run JUnit tests
-![Test Suite](https://venom.preferred.ai/assets/Test-Suite-min259.PNG "Test Suite")
+![Test Suite](https://venom.preferred.ai/wp-content/uploads/sites/2/2018/12/Test-Suite-min259.png "Test Suite")
 
 ## License
 
