@@ -54,7 +54,7 @@ public class TutorialHandler implements Handler {
     for (Element element : elements) {
       final Element aElement = element.select("a").first();
       final String url = aElement.attr("abs:href");
-      final String name = aElement.select("a").first().text();
+      final String name = aElement.text();
       papers.add(new Paper(name, url));
     }
 
