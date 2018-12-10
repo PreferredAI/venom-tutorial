@@ -50,7 +50,7 @@ public class TutorialValidator implements Validator {
     final Document document = vResponse.getJsoup();
 
     // Do some checks here
-    final Element el = document.select("#post-39 > header > h1").first();
+    final Element el = document.select("#page > div > div > div > div.content > div > div > h2").first();
     if (el != null && el.text().equals("Read Our Papers")) {
       return Status.VALID;
     }
