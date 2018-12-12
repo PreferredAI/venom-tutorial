@@ -98,7 +98,8 @@ public class TutorialCrawler {
    * To run your crawler, you have to put it together into a main
    * method. In this exercise you will be crawling the page
    * {@literal https://preferred.ai/publications/}. Use this space
-   * to initialise your crawler and schedule the request.
+   * to initialise your crawler and schedule the request. You should use
+   * the methods from Exercise 2-4 to help you.
    * </p>
    */
   public static void main(String[] args) throws Exception {
