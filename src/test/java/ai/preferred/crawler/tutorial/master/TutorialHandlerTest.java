@@ -1,8 +1,6 @@
 package ai.preferred.crawler.tutorial.master;
 
 import ai.preferred.crawler.tutorial.entity.Paper;
-import ai.preferred.crawler.tutorial.master.TutorialCrawler;
-import ai.preferred.crawler.tutorial.master.TutorialHandler;
 import ai.preferred.venom.Session;
 import ai.preferred.venom.ThreadedWorkerManager;
 import ai.preferred.venom.Worker;
