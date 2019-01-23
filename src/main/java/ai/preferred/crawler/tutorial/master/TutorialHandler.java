@@ -49,11 +49,12 @@ public class TutorialHandler implements Handler {
     final Document document = response.getJsoup();
 
     // Get all the papers
-    final Elements elements = document.select("#post-39 > div > ul > li");
+    final Elements elements = document.select(
+        "#page > div > div > div > div.content > div > article > div > ul > li");
     for (Element element : elements) {
       final Element aElement = element.select("a").first();
       final String url = aElement.attr("abs:href");
-      final String name = aElement.select("a").text();
+      final String name = aElement.text();
       papers.add(new Paper(name, url));
     }
 
