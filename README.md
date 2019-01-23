@@ -19,7 +19,7 @@ Check out our main [Venom](https://github.com/PreferredAI/Venom) page for more i
 [PreferredAI](https://preferred.ai/)
 
 ## Tutorial
-Venom-Starter-Pack includes a set of tutorial designed to quickly get you from 0 to 100.
+venom-tutorial includes a set of tutorial designed to quickly get you from 0 to 100.
 
 There are 7 exercises located in the package ai.preferred.crawler.example.tutorial. 
 Alongside the exercises are a set of test suite that automatically checks your code and provide hints on errors, 
@@ -48,7 +48,7 @@ You can run this command in the project folder
 mvn test
 ```
 Or use your IDE to run JUnit tests
-![Test Suite](https://venom.preferred.ai/assets/Test-Suite-min259.PNG "Test Suite")
+![Test Suite](https://venom.preferred.ai/wp-content/uploads/sites/2/2018/12/Test-Suite-min259.png "Test Suite")
 
 ## License
 

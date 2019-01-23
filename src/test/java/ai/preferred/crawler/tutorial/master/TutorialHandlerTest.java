@@ -1,8 +1,6 @@
 package ai.preferred.crawler.tutorial.master;
 
 import ai.preferred.crawler.tutorial.entity.Paper;
-import ai.preferred.crawler.tutorial.master.TutorialCrawler;
-import ai.preferred.crawler.tutorial.master.TutorialHandler;
 import ai.preferred.venom.Session;
 import ai.preferred.venom.ThreadedWorkerManager;
 import ai.preferred.venom.Worker;
@@ -35,7 +33,8 @@ public class TutorialHandlerTest {
   private Map<String, String> getPapers(Document document) {
     final Map<String, String> papers = new HashMap<>();
 
-    final Elements elements = document.select("#post-39 > div > ul > li");
+    final Elements elements = document.select(
+        "#page > div > div > div > div.content > div > article > div > ul > li");
     for (Element element : elements) {
       final Element aEl = element.selectFirst("a");
       final String url = aEl.attr("abs:href");
@@ -48,7 +47,7 @@ public class TutorialHandlerTest {
 
   @Test
   public void testEx06Handler() throws IOException {
-    final String page = "Read Our Papers – Preferred.AI - Sep 2018.html.gz";
+    final String page = "Read Our Papers – Preferred.AI.html.gz";
 
     final InputStream stream = getClass().getClassLoader().getResourceAsStream(page);
     Assertions.assertNotNull(stream);
@@ -75,7 +74,7 @@ public class TutorialHandlerTest {
     final VResponse vResponse = new VResponse(response);
     final Map<String, String> papersTest = getPapers(vResponse.getJsoup());
 
-    new TutorialHandler().handle(request, response, scheduler, session, worker);
+    new TutorialHandler().handle(request, vResponse, scheduler, session, worker);
 
     Assertions.assertTrue(papers.size() >= papersTest.size(),
         "Not all the papers are found! Did you pick the right selector?");
