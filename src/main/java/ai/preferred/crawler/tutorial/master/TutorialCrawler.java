@@ -53,9 +53,9 @@ public class TutorialCrawler {
   public static Fetcher createFetcher() {
     // Create the fetcher here
     final Fetcher fetcher = AsyncFetcher.builder()
-        .validator(
-            EmptyContentValidator.INSTANCE,
-            StatusOkValidator.INSTANCE,
+        .setValidator(
+            new EmptyContentValidator(),
+            new StatusOkValidator(),
             new TutorialValidator())
         .build();
 
@@ -101,8 +101,8 @@ public class TutorialCrawler {
   public static Crawler createCrawler(Fetcher fetcher, Session session) {
     // Create the crawler here
     final Crawler crawler = Crawler.builder()
-        .fetcher(fetcher)
-        .session(session)
+        .setFetcher(fetcher)
+        .setSession(session)
         .build()
         .start();
 
