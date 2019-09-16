@@ -14,6 +14,12 @@ public class TutorialCrawler {
   // You can use this to log to console
   private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(TutorialCrawler.class);
 
+  /*
+   * After each exercise, you can run the included Junit tests to
+   * see whether you have done it right. Most JAVA IDE provide a
+   * way to run Junit tests, please consult their respective manual.
+   */
+
   /**
    * Exercise 1: Creating a crawler with default settings.
    * <p>
@@ -26,7 +32,7 @@ public class TutorialCrawler {
    * @return a new instance of crawler
    */
   public static Crawler createCrawler() {
-    // Create the crawler here
+    // Create a new crawler here
     final Crawler crawler = null;
 
     return crawler;
@@ -46,7 +52,7 @@ public class TutorialCrawler {
    * @return a new instance of fetcher
    */
   public static Fetcher createFetcher() {
-    // Create the fetcher here
+    // Create a new fetcher here
     final Fetcher fetcher = null;
 
     return fetcher;
@@ -69,6 +75,7 @@ public class TutorialCrawler {
    * @return a new instance of session
    */
   public static Session createSession(List<Paper> papers) {
+    // Create a session here
     final Session session = null;
 
     return session;
@@ -86,11 +93,16 @@ public class TutorialCrawler {
    * @return a new instance of fetcher
    */
   public static Crawler createCrawler(Fetcher fetcher, Session session) {
-    // Create the crawler here
+    // Create a new crawler here
     final Crawler crawler = null;
 
     return crawler;
   }
+
+  /*
+   * Looking for Exercise 5?
+   * Look in ai.preferred.crawler.tutorial.master.TutorialValidator
+   */
 
   /**
    * Exercise 7: Putting it all together.
@@ -113,4 +125,9 @@ public class TutorialCrawler {
     LOGGER.info("You have crawled {} papers.", papers.size());
     papers.forEach(paper -> LOGGER.info("Name: {}, Url: {}", paper.getName(), paper.getUrl()));
   }
+
+  /*
+   * To check whether Exercise 7 is done correctly, please run the main
+   * method of this class directly. This will crawl our web page in realtime.
+   */
 }
