@@ -58,4 +58,9 @@ public class TutorialValidator implements Validator {
     return Status.INVALID_CONTENT;
   }
 
+  /*
+   * Looking for Exercise 6?
+   * Look in ai.preferred.crawler.tutorial.master.TutorialHandler
+   */
+
 }

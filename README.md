@@ -15,6 +15,7 @@ Check out our main [Venom](https://github.com/PreferredAI/Venom) page for more i
 
 ### Quick links
 [Website](https://venom.preferred.ai/) |
+[Wiki](https://github.com/PreferredAI/venom/wiki) |
 [API Reference](https://venom.preferred.ai/docs/) |
 [PreferredAI](https://preferred.ai/)
 
@@ -24,6 +25,8 @@ venom-tutorial includes a set of tutorial designed to quickly get you from 0 to 
 There are 7 exercises located in the package ai.preferred.crawler.example.tutorial. 
 Alongside the exercises are a set of test suite that automatically checks your code and provide hints on errors, 
 so you do not have to worry about not knowing whether your code works.
+
+For more information you can visit our [Wiki](https://github.com/PreferredAI/venom/wiki).
 
 #### TutorialCrawler.java
 - Exercise 1: Creating a crawler with default settings.

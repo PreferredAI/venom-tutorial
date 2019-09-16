@@ -17,9 +17,11 @@ public class EntityCSVStorage<T> implements AutoCloseable {
 
   private final CSVPrinter printer;
 
-  public EntityCSVStorage(String file, Class<T> clazz) throws IOException {
+  private boolean hasHeader;
+
+  public EntityCSVStorage(String file) throws IOException {
     printer = new CSVPrinter(new FileWriter(file), CSVFormat.EXCEL);
-    printer.printRecord(getHeaderList(clazz));
+    hasHeader = false;
   }
 
   private static List<String> getHeaderList(Class clazz) {
@@ -40,15 +42,19 @@ public class EntityCSVStorage<T> implements AutoCloseable {
     return result;
   }
 
-  public synchronized boolean append(T object) {
+  public synchronized void append(T object) throws IOException {
+    if (!hasHeader) {
+      printer.printRecord(getHeaderList(object.getClass()));
+      printer.flush();
+      hasHeader = true;
+    }
+
     try {
       printer.printRecord(toList(object));
       printer.flush();
-    } catch (IOException | IllegalAccessException e) {
-      LOGGER.error("unable to store property: ", e);
-      return false;
+    } catch (IllegalAccessException e) {
+      throw new IOException("unable to store property: ", e);
     }
-    return true;
   }
 
   @Override
