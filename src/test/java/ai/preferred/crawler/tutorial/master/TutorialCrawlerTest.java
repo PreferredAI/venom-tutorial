@@ -1,8 +1,6 @@
 package ai.preferred.crawler.tutorial.master;
 
 import ai.preferred.crawler.tutorial.entity.Paper;
-import ai.preferred.crawler.tutorial.master.TutorialCrawler;
-import ai.preferred.crawler.tutorial.master.TutorialValidator;
 import ai.preferred.venom.Crawler;
 import ai.preferred.venom.Session;
 import ai.preferred.venom.fetcher.AsyncFetcher;
@@ -30,7 +28,7 @@ public class TutorialCrawlerTest {
     field.setAccessible(true);
 
     final Thread thread = (Thread) field.get(crawler);
-    Assertions.assertTrue(thread.isAlive(), "Crawler not started found! Did you start the crawler?");
+    Assertions.assertTrue(thread.isAlive(), "Crawler not started! Did you start the crawler?");
 
     crawler.interruptAndClose();
   }
@@ -101,7 +99,7 @@ public class TutorialCrawlerTest {
     final Field field = crawler.getClass().getDeclaredField("crawlerThread");
     field.setAccessible(true);
     final Thread thread = (Thread) field.get(crawler);
-    Assertions.assertTrue(thread.isAlive(), "Crawler not started found! Did you start the crawler?");
+    Assertions.assertTrue(thread.isAlive(), "Crawler not started! Did you start the crawler?");
 
     final Field field2 = crawler.getClass().getDeclaredField("fetcher");
     field2.setAccessible(true);
