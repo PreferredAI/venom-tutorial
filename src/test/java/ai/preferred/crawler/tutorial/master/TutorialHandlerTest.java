@@ -4,7 +4,7 @@ import ai.preferred.crawler.tutorial.entity.Paper;
 import ai.preferred.venom.Session;
 import ai.preferred.venom.ThreadedWorkerManager;
 import ai.preferred.venom.Worker;
-import ai.preferred.venom.job.FIFOQueueScheduler;
+import ai.preferred.venom.job.FIFOJobQueue;
 import ai.preferred.venom.job.Scheduler;
 import ai.preferred.venom.request.Request;
 import ai.preferred.venom.request.VRequest;
@@ -68,7 +68,7 @@ public class TutorialHandlerTest {
 
     final Request request = new VRequest(page);
     final Response response = new BaseResponse(statusCode, url, content, contentType, headers, proxy);
-    final Scheduler scheduler = new FIFOQueueScheduler().getScheduler();
+    final Scheduler scheduler = new Scheduler(new FIFOJobQueue());
     final Session session = Session.builder().put(TutorialCrawler.PAPER_LIST_KEY, papers).build();
     final Worker worker = new ThreadedWorkerManager(new InlineExecutorService()).getWorker();
 
