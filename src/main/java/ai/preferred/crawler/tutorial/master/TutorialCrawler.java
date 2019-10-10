@@ -118,7 +118,7 @@ public class TutorialCrawler {
     final List<Paper> papers = new ArrayList<>();
 
     // try-with block automatically closes the crawler upon completion.
-    try (final Crawler crawler = null) {
+    try (Crawler crawler = null) {
 
     }
 
