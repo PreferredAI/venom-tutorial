@@ -135,7 +135,7 @@ public class TutorialCrawler {
     final List<Paper> papers = new ArrayList<>();
 
     // try-with block automatically closes the crawler upon completion.
-    try (final Crawler crawler = createCrawler(createFetcher(), createSession(papers))) {
+    try (Crawler crawler = createCrawler(createFetcher(), createSession(papers))) {
       final Request request = new VRequest("https://preferred.ai/publications/");
       crawler.getScheduler().add(request, new TutorialHandler());
     }
