@@ -28,6 +28,8 @@ public class TutorialHandler implements Handler {
    * to extract all paper name and url and use it to create {@code Paper}
    * object. Lastly, add all the {@code Paper} objects into papers array
    * list for the test to pass.
+   * <p>
+   * Ref: https://github.com/PreferredAI/venom-examples/blob/master/src/main/java/ai/preferred/crawler/single/SingleHandler.java
    * </p>
    *
    * @param request   request fetched.

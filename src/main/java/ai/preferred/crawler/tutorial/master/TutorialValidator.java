@@ -32,6 +32,8 @@ public class TutorialValidator implements Validator {
    * will be testing your validation against multiple timeline and
    * different pages on https://preferred.ai/. Return {@code Status.Valid}
    * if the page is right and {@code Status.INVALID_CONTENT} if wrong.
+   * <p>
+   * Ref: https://github.com/PreferredAI/venom-examples/blob/master/src/main/java/ai/preferred/crawler/iproperty/master/ListingValidator.java
    * </p>
    *
    * @param request  The request used to fetch.
