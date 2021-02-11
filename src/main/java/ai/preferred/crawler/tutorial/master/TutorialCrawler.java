@@ -27,6 +27,10 @@ public class TutorialCrawler {
    * checks the queue and tells the fetcher what to crawl, and
    * where should the response be processed. Creating a default
    * crawler will automatically create a default fetcher.
+   * <p>
+   * Do remember to start it up!
+   * <p>
+   * Ref: https://github.com/PreferredAI/venom/wiki/Getting-Started:-Overview#how-did-the-magic-happen
    * </p>
    *
    * @return a new instance of crawler
@@ -47,6 +51,8 @@ public class TutorialCrawler {
    * The fetcher class is like a internet browser, it allows
    * you to fetch a page given a request (URL). You can also constrain
    * the validity of the page by using validators.
+   * <p>
+   * Ref: https://github.com/PreferredAI/venom-examples/blob/fcb983dfb156f6c6746f23d9def0fdc6b39b9ae9/src/main/java/ai/preferred/crawler/iproperty/master/ListingCrawler.java#L54
    * </p>
    *
    * @return a new instance of fetcher
@@ -70,6 +76,8 @@ public class TutorialCrawler {
    * return objects from the handler. To overcome this, we will use a session
    * store. We have already created the session key above {@see PAPER_LIST_KEY},
    * your task will be to insert this key into a session.
+   * <p>
+   * Ref: https://github.com/PreferredAI/venom-examples/blob/fcb983dfb156f6c6746f23d9def0fdc6b39b9ae9/src/main/java/ai/preferred/crawler/iproperty/master/ListingCrawler.java#L34
    * </p>
    *
    * @return a new instance of session
@@ -88,6 +96,10 @@ public class TutorialCrawler {
    * checks the queue and tells the fetcher what to crawl, and
    * where should the response be processed. To use the fetcher and
    * session you created you should put it into crawler's builder.
+   * <p>
+   * Do remember to start it up!
+   * <p>
+   * Ref: https://github.com/PreferredAI/venom-examples/blob/fcb983dfb156f6c6746f23d9def0fdc6b39b9ae9/src/main/java/ai/preferred/crawler/iproperty/master/ListingCrawler.java#L63
    * </p>
    *
    * @return a new instance of fetcher
@@ -112,6 +124,8 @@ public class TutorialCrawler {
    * {@literal https://preferred.ai/publications/}. Use this space
    * to initialise your crawler and schedule the request. You should use
    * the methods from Exercise 2-4 to help you.
+   *
+   * Ref: https://github.com/PreferredAI/venom-examples/blob/fcb983dfb156f6c6746f23d9def0fdc6b39b9ae9/src/main/java/ai/preferred/crawler/iproperty/master/ListingCrawler.java#L40
    * </p>
    */
   public static void main(String[] args) throws Exception {
